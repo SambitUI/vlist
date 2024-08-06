@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import VirtualizedList from "./VirtualizedList";
 
 function App() {
+  const LIST = Array.from({ length: 100000 }, (_, index) => index + 1);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <VirtualizedList list={LIST} height={400} width={300} itemHeight={35} />{" "}
     </div>
   );
 }
